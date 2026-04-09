@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon music cluster</title>
+    <link rel="icon" type="image/png" href="images/pngwing.com.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="side-navbar">
+            <div class="first-bloc">
+            <div><img class="iconimg" src="images/pngwing.com.png"></div>
+            <div class=header>Amazon Music Clustering Dashboard</div>
+            </div>
+            <div class="second-bloc">
+                 <div class="nav-btn" data-target="Overview">Overview</div>
+                 <div class="nav-btn" data-target="Analysis">Analysis & Correlation</div>
+                 <div class="nav-btn" data-target="Visualization">Cluster Visualization</div>
+                 <div class="nav-btn" data-target="Evaluation">Model Evaluation</div>
+                 <div class="nav-btn" data-target="Recommendation">Song Recommendation</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="section" id="Overview">
+                <div class="sub-head1">Overview</div>
+                <div class="card_holder">
+                    <div class="card">
+                        <div class="card_text">Total songs</div>
+                        <div class="card_num">95837</div>
+                    </div>
+                    <div class="card">
+                        <div class="card_text">Number of features</div>
+                        <div class="card_num">10</div>
+                    </div>
+                    <div class="card">
+                        <div class="card_text">Number of clusters</div>
+                        <div class="card_num">4</div>
+                    </div>
+                    <div class="card">
+                        <div class="card_text">Silhouette score</div>
+                        <div class="card_num">0.31</div>
+                    </div>
+                </div>
+                <div class="chartbox">
+                <div class="overview-chart-box"><div id="cluster_distribution"></div></div>
+                <div class="overview-chart-box"><div id="top_features_per_cluster"></div></div>
+                </div>
+            </div>
+
+            <div class="section" id="Analysis">
+                <div class="sub-head1">Analysis & Correlation</div>
+                <div class="feature-dropdown">
+                <label for="features">Select feature :</label>
+                <select name="features" id="dropfeature">
+                    <option  value="danceability">Danceability</option>
+                    <option  value="energy">Energy</option>
+                    <option  value="loudness">Loudness</option>
+                    <option  value="speechiness">Speechiness</option>
+                    <option  value="acousticness">Acousticness</option>
+                    <option  value="instrumentalness">Instrumentalness</option>
+                    <option  value="liveness">Liveness</option>
+                    <option  value="valence">Valence</option>
+                    <option  value="tempo">Tempo</option>
+                    <option  value="duration_ms">Duration_ms</option>
+                </select>
+                </div>
+                <div class="hist-box-chart-div">
+                    <div class="chart-box"><div id="feature-hist"></div></div>
+                    <div class="chart-box"><div id="feature-box"></div></div>
+                </div>
+                <div class="heatmap-chart">
+                    <div class="heat-chart-box"><div id="cor-heatmap"></div></div>
+                </div>
+            </div>
+
+            <div class="section" id="Visualization">
+                <div class="sub-head1">Cluster Visualization</div>
+    
+                <div class="scatter-chart">
+                    <div class="scatter-chart-box"><div id="pca"></div></div>
+                </div>
+            </div>
+
+            <div class="section" id="Evaluation">
+                <div class="sub-head1">Model Evaluation</div>
+    
+                <div class="elbow-chart">
+                    <div class="elbow-chart-box"><div id="elbow"></div></div>
+                    <div class="card_holdere">
+                    <div class="carde">
+                        <div class="card_texte">Inertia</div>
+                        <div class="card_nume">20518.0</div>
+                    </div>
+                    <div class="carde">
+                        <div class="card_texte">Davies-Boulin Index</div>
+                        <div class="card_nume">4</div>
+                    </div>
+                    <div class="carde">
+                        <div class="card_texte">Silhouette score</div>
+                        <div class="card_nume">0.31</div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+             <div class="section" id="Recommendation">
+                <div class="sub-head1">Song Recommendation</div>
+                <div class="search-container">
+    <input type="text" id="song-input" placeholder="Search song...">
+    <div id="suggestions"></div>
+</div>
+
+<div class="table-container">
+    <table id="recommend-table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Song</th>
+                <th>Popularity</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+                </div>
+    
+            </div>
+            </div>
+
+        </div>
+    </div> 
+    
+    
+</body>
+</html>
