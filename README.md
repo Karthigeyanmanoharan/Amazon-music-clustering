@@ -111,7 +111,9 @@ Songs are recommended based on:
 * Pandas, NumPy
 * Scikit-learn
 * Plotly
-* Streamlit
+* Html,Css,Js
+* Fastapi
+ 
 
 ---
 
@@ -120,12 +122,16 @@ Songs are recommended based on:
 ```
 Amazon music clustering/
 │
-├── app.py
 ├── eda.ipynb
+├──etl.py
 ├── README.md
 └── Data/
     └── cleaned data/
         └── Amazon_music_cluster_data.csv
+├──main.py
+├──index.html
+├──style.css
+├──main.js
 ```
 
 ---
@@ -143,7 +149,7 @@ streamlit run app.py
 
 * End-to-end ML project
 * Unsupervised learning implementation
-* Interactive dashboard using Streamlit
+* Interactive dashboard using Html,css,js
 * Business-focused insights
 
 ---
@@ -165,4 +171,4 @@ It replicates real-world use cases used in platforms like Spotify and Amazon Mus
 
 * Add deep learning models
 * Real-time recommendation system
-* Deploy on cloud (AWS / Streamlit Cloud)
+* Deploy on cloud (AWS)
