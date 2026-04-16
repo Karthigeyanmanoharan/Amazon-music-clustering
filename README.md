@@ -140,7 +140,7 @@ Amazon music clustering/
 
 ```bash
 pip install -r requirements.txt
-streamlit run app.py
+uvicorn main:main.py --reload
 ```
 
 ---
